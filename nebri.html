@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Minecraft Server</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 py-4 bg-gray-800 shadow">
+    <div class="flex items-center gap-6">
+      <img src="pack.png" alt="Logo" class="w-12 h-12">
+      <a href="index.html" class="hover:text-cyan-400">Startseite</a>
+      <a href="rankshop.html" class="text-cyan-400 font-semibold">Rank-Shop</a>
+      <a href="op.html" class="hover:text-cyan-400">Shop</a>
+      <a href="wiki.html" class="hover:text-cyan-400">Wiki</a>
+      <a href="regeln.html" class="hover:text-cyan-400">Regelwerk</a>
+      <a href="news.html" class="hover:text-cyan-400">News</a>
+    </div>
+    <a href="#" class="bg-cyan-500 hover:bg-cyan-600 px-4 py-2 rounded">Login</a>
+  </nav>
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>PixelMine Shop</title>
+</head>
+<body style="background:#111; color:white; font-family:sans-serif; padding:20px;">
+  <h1>PixelMine.eu Rang-Shop</h1>
+  <p>Wähle deinen Rang:</p>
+
+  <div style="background:#222; padding:10px; margin:10px 0;">
+    <strong>Schreibe ihr Dein Minecraft Namen rein!</strong><br>
+    <input type="text" id="username" placeholder="Minecraft-Name eingeben">
+    <button onclick="buy('VIP')">Kaufen</button>
+  </div>
+
+  <script>
+    function buy(rank) {
+      const username = document.getElementById("username").value;
+      if (!username) return alert("Bitte gib deinen Minecraft-Namen ein.");
+
+      fetch('buy.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rank, username })
+      })
+      .then(res => res.text())
+      .then(msg => alert(msg));
+    }
+  </script>
+</body>
+</html>
+
+  <!-- Rank-Shop Content -->
+  <main class="p-10">
+    <h1 class="text-3xl font-bold mb-4">Shop &raquo; Ränge</h1>
+    <p class="text-gray-300 mb-8 max-w-2xl">
+      Bist du bereit, dein Spielerlebnis auf das nächste Level zu bringen? In unserem Online-Shop hast du die Möglichkeit, dir exklusive Ränge mit spannenden Vorteilen oder besondere Extras zu holen. Jeder Kauf unterstützt unser Netzwerk und die Entwicklung neuer Features.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Rank 1 -->
+      <div class="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+        <img src="vip2.png" alt="Crystal Rank" class="mx-auto w-20 mb-4">
+        <h2 class="text-xl font-semibold mb-2">VIP</h2>
+        <p class="mb-4"></p>
+        <p class="text-cyan-400 text-xl font-bold mb-4">5.00€</p>
+        <button onclick="buyRank('VIP')">Kaufen</button>
+      </div>
+
+      <!-- Rank 2 -->
+      <div class="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+        <img src="titan2.png" alt="Crystal Rank" class="mx-auto w-20 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Titan</h2>
+        <p class="mb-4"></p>
+        <p class="text-cyan-400 text-xl font-bold mb-4">12.00€</p>
+        <button onclick="buyRank('VIP')">Kaufen</button>
+      </div>
+
+      <!-- Rank 3 -->
+      <div class="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+        <img src="legend2.png" alt="Crystal Rank" class="mx-auto w-20 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Legend</h2>
+        <p class="mb-4"></p>
+        <p class="text-cyan-400 text-xl font-bold mb-4">20.00€</p>
+        <button onclick="buyRank('VIP')">Kaufen</button>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+        <img src="OP-picke.png" alt="Crystal Rank" class="mx-auto w-20 mb-4">
+        <h2 class="text-xl font-semibold mb-2">OP Picke</h2>
+        <p class="mb-4"></p>
+        <p class="text-cyan-400 text-xl font-bold mb-4">9.00€</p>
+        <button onclick="buyRank('VIP')">Kaufen</button>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+        <img src="legend-rüstung.png" alt="Crystal Rank" class="mx-auto w-20 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Legend Rüstung</h2>
+        <p class="mb-4"></p>
+        <p class="text-cyan-400 text-xl font-bold mb-4">15.00€</p>
+        <button onclick="buyRank('VIP')">Kaufen</button>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+        <img src="Titan-boosts.png" alt="Crystal Rank" class="mx-auto w-20 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Titan schuhe</h2>
+        <p class="mb-4"></p>
+        <p class="text-cyan-400 text-xl font-bold mb-4">2.00€</p>
+        <button onclick="buyRank('VIP')">Kaufen</button>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+        <img src="thors-hammer.png" alt="Crystal Rank" class="mx-auto w-20 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Thors Hammer</h2>
+        <p class="mb-4"></p>
+        <p class="text-cyan-400 text-xl font-bold mb-4">12.00€</p>
+        <button onclick="buyRank('VIP')">Kaufen</button>
+      </div>
